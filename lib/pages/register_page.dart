@@ -11,11 +11,12 @@ class RegisterPage extends StatelessWidget {
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
     final TextEditingController confirmPasswordController = TextEditingController();
+    final TextEditingController sendMessageController = TextEditingController();
 
     @override
     Widget build(BuildContext context){
         return Scaffold(
-            backgroundColor: Theme.of(context).colorScheme.background,
+            backgroundColor: Theme.of(context).colorScheme.surface,
             body: Center(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -56,10 +57,17 @@ class RegisterPage extends StatelessWidget {
                             obscureText: true,
                         ),
 
+
+                        MyTextField(
+                          controller: sendMessageController,
+                          hintText: "Send Message",
+                          obscureText: true,
+                        ),
+
                         const SizedBox(height: 25),
 
                         MyButton(
-                            text: "Sign Un",
+                            text: "Sign Up",
                             onTap: (){}
                         ),
 

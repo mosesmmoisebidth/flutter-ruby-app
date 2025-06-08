@@ -8,7 +8,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       child: Column(
         children: [
           Padding(
@@ -35,12 +35,18 @@ class MyDrawer extends StatelessWidget {
           MyDrawerTile(
             icon: Icons.settings,
             text: "S E T T I N G S",
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SettingsPage(),
-              ),
-            ),
+            onTap: () {
+              Navigator.pop(context);
+              Future.delayed(const Duration(milliseconds: 250), () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsPage(),
+                  ),
+                );
+              });
+            },
+
           ),
 
           const Spacer(),
